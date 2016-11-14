@@ -53,18 +53,18 @@ maze width height gen = do
 
 printMaze :: Maze -> IO ()
 printMaze (Maze rWalls bWalls) = do
-    putStrLn $ '1' : (concat $ replicate (maxX + 1) "1111")
+    putStrLn $ '1' : (concat $ replicate (maxX + 1) ",1,1,1,1")
     forM_ [0 .. maxY] $ \y -> do
         putStr "1"
         forM_ [0 .. maxX] $ \x -> do
-            putStr "000"
-            putStr $ if rWalls ! (x, y) then "1" else "0"
+            putStr ",0,0,0"
+            putStr $ if rWalls ! (x, y) then ",1" else ",0"
         putStrLn ""
         forM_ [0 .. maxX] $ \x -> do
-            putStr "1"
-            putStr $ if bWalls ! (x, y) then "111" else "000"
+            putStr "1,"
+            putStr $ if bWalls ! (x, y) then "1,1,1," else "0,0,0,"
         putStrLn "1"
   where maxX = fst (snd $ bounds rWalls)
         maxY = snd (snd $ bounds rWalls)
 
-main = getStdGen >>= stToIO . maze 11 8 >>= printMaze
+main = getStdGen >>= stToIO . maze 20 20 >>= printMaze
