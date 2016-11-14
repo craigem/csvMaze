@@ -15,3 +15,11 @@ they may be used to create mazes in `Minecraft`_ as per **Building a Maze** in
 .. _Wikipedia: http://en.wikipedia.org/
 .. _Minecraft: https://minecraft.net/en/
 .. _Adventures in Minecraft: http://au.wiley.com/WileyCDA/WileyTitle/productCd-111894691X.html
+
+Release Notes
+-------------
+
+0.1.0
+* Produces output that be piped into a CSV file and used as input for a
+  Minecraft maze.
+* However does so without an entrance or an exit. Oh my!
