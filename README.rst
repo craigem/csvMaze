@@ -19,7 +19,12 @@ they may be used to create mazes in `Minecraft`_ as per **Building a Maze** in
 Release Notes
 -------------
 
-0.1.0
+**0.1.1**
+
+* Cleaned up CSV output so clean mazes are generated.
+
+**0.1.0**
+
 * Produces output that be piped into a CSV file and used as input for a
   Minecraft maze.
 * However does so without an entrance or an exit. Oh my!
