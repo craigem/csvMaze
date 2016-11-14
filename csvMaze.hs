@@ -67,4 +67,4 @@ printMaze (Maze rWalls bWalls) = do
   where maxX = fst (snd $ bounds rWalls)
         maxY = snd (snd $ bounds rWalls)
 
-main = getStdGen >>= stToIO . maze 20 20 >>= printMaze
+main = getStdGen >>= stToIO . maze 11 08 >>= printMaze
