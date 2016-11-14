@@ -1,5 +1,5 @@
 {-# LANGUAGE FlexibleContexts #-}
-{-# LANGUAGE TypeFamilies      #-}
+{-# LANGUAGE TypeFamilies #-}
 
 import Control.Monad
 import Control.Monad.ST
@@ -53,17 +53,17 @@ maze width height gen = do
 
 printMaze :: Maze -> IO ()
 printMaze (Maze rWalls bWalls) = do
-    putStrLn $ '+' : (concat $ replicate (maxX + 1) "---+")
+    putStrLn $ '1' : (concat $ replicate (maxX + 1) "1111")
     forM_ [0 .. maxY] $ \y -> do
-        putStr "|"
+        putStr "1"
         forM_ [0 .. maxX] $ \x -> do
-            putStr "   "
-            putStr $ if rWalls ! (x, y) then "|" else " "
+            putStr "000"
+            putStr $ if rWalls ! (x, y) then "1" else "0"
         putStrLn ""
         forM_ [0 .. maxX] $ \x -> do
-            putStr "+"
-            putStr $ if bWalls ! (x, y) then "---" else "   "
-        putStrLn "+"
+            putStr "1"
+            putStr $ if bWalls ! (x, y) then "111" else "000"
+        putStrLn "1"
   where maxX = fst (snd $ bounds rWalls)
         maxY = snd (snd $ bounds rWalls)
 
